@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="cart">
+    <h1>MY CART</h1>
+    <div class="items">
+        <div class="cartitems">
+            {% if noitem %}
+            <h1>No item in cart</h1>
+            {% else %}
+
+            {% for i in c %}
+            <div class="cartdetails">
+                <div id="image">
+                    <img src="{{i.image.url}}" alt="">
+                </div>
+                <div id="fname">
+                    <p>{{i.name}}</p>
+                    <a href="{% url 'remove' i.id %}">Remove</a>
+                </div>
+                <div id="fprice">
+
+                    <p>
+                        <a href="{% url 'quantityminus' i.id %}">-</a>
+                        {{i.quantity}}
+                        <a href="{% url 'quantityplus' i.id %}">+</a>
+                    </p>
+
+                    <p>Rs. {{i.totalprice}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="rall">
+                <a href="{% url 'removeall' %}">Remove All</a>
+                <a id="addmore" href="{% url 'menu' %}">Add More</a>
+            </div>
+
+            {% endif %}
+        </div>
+        <div class="totalamount">
+            <div class="tamount">
+                <h1>{{count_}} Items</h1>
+                <h2>Total : Rs {{totalamount}}/-</h2>
+                <div id="ckbutton">
+                    <a href="{% url 'checkout' %}">Check out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

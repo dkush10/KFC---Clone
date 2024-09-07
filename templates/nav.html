@@ -1,0 +1,41 @@
+{% load static %}
+<nav>
+    <div class="logo">
+        <a href="{% url 'home' %}"><img src="{% static 'images/kfclogo.png' %}" alt=""></a>
+    </div>
+    {% if request.user.is_authenticated %}
+    <div class="navlinks">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'menu' %}">Menu</a>
+
+        <a href="{% url 'profile' %}">Profile({{request.user}})</a>
+        <a href="{% url 'contactus' %}">Contact us</a>
+        <a href="{% url 'aboutus' %}">About us</a>
+
+    </div>
+    <div class="cart10">
+        <a class="cartbucket" href="{% url 'cart' %}">Cart <div class="count1">{{count_}}</div> <img
+                src="/static/images/bucket_cart_icon.svg" alt="">
+        </a>
+    </div>
+    <div class="signin1">
+        <a href="{% url 'logout_' %}">Log out</a>
+    </div>
+
+    {% else %}
+    <div class="navlinks">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'menu' %}">Menu</a>
+        <a href="{% url 'aboutus' %}">About us</a>
+    </div>
+    <div class="signin1">
+        <img src="{% static 'images/signinimg.png' %}" alt="">
+        <a href="{% url 'signin' %}">Sign In</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    </div>
+    {% endif %}
+</nav>
+<div class="order">
+    <h1 id="horder">LET'S ORDER FOR DELIVERY, PICK UP, OR DINE-IN</h1>
+    <a href="{% url 'menu' %}">Start Order</a>
+</div>

@@ -1,0 +1,108 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="home">
+    <div class="crousel">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/images/crousel1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/crousel3.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/crousel2.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="bcategory">
+        <h1>BROWSE CATEGORIES</h1>
+        <div class="hline"></div>
+    </div>
+    <div class="categorycard">
+        <div class="category">
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width:18rem;">
+                    <img src="/static/images/Krispy day.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">Krispy Days (Limited Time)</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width:18rem;">
+                    <img src="/static/images/New chicken roll.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">New Chicken Rolls</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/images/Korean Popcorn.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">Korean popcorn</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/images/Value Lunch Specials.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">Value Lunch Specials</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="category">
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/images/Chicken Buckets.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">Chicken Buckets</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/images/Box Meals.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">Box Meals</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width: 18rem;">
+                    <img src="/static/images/Snackers @99.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">Snackers @99</h3>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'menu' %}">
+                <div class="card" style="width: 18rem;">
+                    <img id="allmenu" src="/static/images/View All Menu.svg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="cardtext">View All Menu</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

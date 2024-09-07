@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="uprofile">
+    <h1>Update profile</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <label for="">Name</label>
+        <input type="text" name="first_name" value="{{u.first_name}}">
+
+        <label for="">Email</label>
+        <input type="email" name="email" value="{{u.email}}">
+
+        <label for="">Username</label>
+        <input type="text" name="username" value="{{u.username}}">
+
+        <div id="psubmit">
+            <input type="submit" name="" id="submit" value="submit">
+            <a id="cancel" href="{% url 'profile' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

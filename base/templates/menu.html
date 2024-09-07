@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="menu">
+    <div class="mcategory">
+        <img src="/static/images/red line.png" alt="">
+        <h1>KFC MENU</h1>
+        <form action="">
+            {% for i in category %}
+            <input type="submit" name="cat" value="{{i}}">
+            {% endfor %}
+        </form>
+    </div>
+    <div class="allmenu">
+        <div class="search">
+            <form action="">
+                <img id="simg" src="/static/images/search.svg" alt="">
+                <input type="text" placeholder="Search our menu" name="q">
+                <!-- <input id="searchsubmit" type="submit" value="Search"> -->
+            </form>
+        </div>
+        <h1>All Meals</h1>
+        <div class="allmeals">
+            {% for i in all %}
+            <div class="card">
+                <img src="{{i.image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <p class="card-text">{{i.foodtype}}</p>
+                    <h5 class="card-price">Rs. {{i.price}}</h5>
+                    <p class="card-desc">{{i.desc}}</p>
+                    <div class="add">
+                        <a href="{% url 'addtocart' i.id %}">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

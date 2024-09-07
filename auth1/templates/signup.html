@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="signup">
+    <p>Sign Up</p>
+    <div class="image">
+        <img src="/static/images/kfclogo.png" alt="">
+    </div>
+    <h1>Let's Sign Up</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" name="username" placeholder="Enter username">
+
+        <label for="">Email</label>
+        <input type="email" name="email" placeholder="Enter email address">
+
+        <label for="">Password</label>
+        <input type="password" name="password" id="" placeholder="Enter password">
+
+
+        <div id="ssubmit1">
+            <input id="submit1" type="submit" value="Sign Up">
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
