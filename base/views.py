@@ -99,7 +99,8 @@ def addtocart(request, id):
                                 host=request.user,
                                 )
         return redirect('menu')
-    return render(request,'menu.html',{'auth':auth,'count_':count_(request)})
+    else:
+        return render(request,'menu.html',{'auth':auth,'count_':count_(request)})
 
 def quantityplus(request, id):
     c=Cart.objects.get(id=id)
